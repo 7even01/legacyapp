@@ -1,0 +1,6 @@
+[
+    {
+      "name": "legacyapp",
+      "imageUri": "337059792605.dkr.ecr.eu-west-1.amazonaws.com/legacyapp:latest"
+    }
+  ]

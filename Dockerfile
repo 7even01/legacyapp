@@ -16,7 +16,13 @@ SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop';"]
 
 ENV APP_ROOT=C:\web-app
 
+
+
 WORKDIR ${APP_ROOT}
+
+COPY appspec.yaml .
+COPY taskdef.json .
+
 RUN Remove-Website -Name 'Default Web Site';`
     New-Website -Name 'web-app' -Port 80 -PhysicalPath $env:APP_ROOT; `
     New-WebApplication -Name 'app' -Site 'web-app' -PhysicalPath $env:APP_ROOT
